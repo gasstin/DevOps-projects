@@ -1,6 +1,6 @@
-**## Jenkins in Docker Container**
+# **Jenkins in Docker Container**
 
-# Resume
+## Resume
 In this project we practice Jenkins and Docker. We'll create a simple pipeline to
 connect with GitHub.
 

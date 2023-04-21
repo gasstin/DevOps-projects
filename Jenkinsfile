@@ -1,16 +1,15 @@
 pipeline {
 
-    agent any
+    agent {
+        docker {
+            image 'python:3.10-alpine'
+            args '-u'
+        }
+    }
 
     stages {
     
         stage("build") {
-            agent {
-                docker {
-                    image 'python:3'
-                    args '-u'
-                }
-            }
 
             steps {
                 dir('./first_project') {

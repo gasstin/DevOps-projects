@@ -1,6 +1,11 @@
 pipeline {
 
-    agent any
+    agent {
+        docker {
+            image 'python:3.10-alpine'
+            args '-u'
+        }
+    }
 
     stages {
     
@@ -10,7 +15,7 @@ pipeline {
                 dir('./first_project') {
                 sh 'echo "Working directory is: $(pwd)"'
                 echo 'Building the app.'
-                sh './setup_enviroment.sh '
+                sh 'pip install -r requirements.txt'
                 sh 'python3 app.py'
                 }
             }

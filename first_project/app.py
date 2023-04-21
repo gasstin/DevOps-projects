@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get('/')
 def index():
-    return {"message" : "hello world"}
+    return {"message" : "Hello world"}
 
 if "__main__" == __name__:
     uvicorn.run(

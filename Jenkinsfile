@@ -4,6 +4,14 @@ pipeline {
 
     stages {
 
+        stage('Install Sudo') {
+
+            steps {
+                sh 'apt-get update'
+                sh 'apt-get install -y sudo'
+            }
+         }
+
         stage("build") {
 
             steps {

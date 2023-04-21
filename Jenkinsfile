@@ -7,6 +7,7 @@ pipeline {
         stage("build") {
 
             steps {
+                sh 'source venv/bin/active'
                 echo 'Building the app.'
 
             }
@@ -16,6 +17,7 @@ pipeline {
 
             steps {
                 echo 'Testing the app.'
+                sh 'pytest test_apy.py'
             }
         }
     }

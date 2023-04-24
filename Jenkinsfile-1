@@ -9,7 +9,12 @@ pipeline {
             }
             steps {
                 sh 'python3 --version'
-                sh 'make --version'
+                sh 'echo *******************'
+                sh 'pwd'
+                sh 'echo *******************'
+                sh 'cd first_project'
+                sh 'echo *******************'
+                sh 'ls'
             }
         }
     }

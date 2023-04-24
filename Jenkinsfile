@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'pip install -r requirements.txt'
+                sh './first_project/setup_enviroment.sh'
                 sh 'make -f ./first_project/server_setup.mk start'
             }
         }

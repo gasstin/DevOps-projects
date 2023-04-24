@@ -13,14 +13,14 @@ run:
   jenkins_dind
 
 # Recreate the container
-recreate: build run
+recreate: kill build run
 
 
 # Stop and Remove the container
 kill:
-	docker stop jenkins-python-app
-	docker rm jenkins-python-app
-	docker image rm jenkins_dind
+	docker stop jenkins-python-app || true
+	docker rm jenkins-python-app || true
+	docker rmi jenkins_dind:latest || true
 
 # Logs of the container
 logs:

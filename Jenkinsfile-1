@@ -4,7 +4,8 @@ pipeline {
         stage('Check tools') { 
             agent {
                 docker {
-                    image 'python:3.10-alpine'
+                image 'gasstin/jenkins-pyhton-app:latest'
+                args '-u root'
                 }
             }
             steps {

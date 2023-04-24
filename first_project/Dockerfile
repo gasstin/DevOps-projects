@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:lts-jdk11
 USER root
-RUN apt-get update && apt-get install -y lsb-release make
+RUN apt-get update && apt-get install -y lsb-release make python3
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
   https://download.docker.com/linux/debian/gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) \

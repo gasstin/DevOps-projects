@@ -10,7 +10,7 @@ run:
   --volume "$$HOME":/home \
   --restart=on-failure \
   --env JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true" \
-  jenkins_dind
+  gasstin/jenkins_dind:latest 
 
 # Recreate the container
 recreate: kill build run
@@ -20,7 +20,7 @@ recreate: kill build run
 kill:
 	docker stop jenkins-python-app || true
 	docker rm jenkins-python-app || true
-	docker rmi jenkins_dind:latest || true
+	docker rmi gasstin/jenkins_dind:latest || true
 
 # Logs of the container
 logs:

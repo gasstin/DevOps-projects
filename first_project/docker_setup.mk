@@ -28,7 +28,7 @@ logs:
 
 # Build the image from the Dockerfile
 build:
-	docker build -t jenkins_dind .
+	docker build -t gasstin/jenkins_dind:latest .
 
 # Stop the python app container
 stop:

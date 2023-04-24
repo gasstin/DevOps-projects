@@ -12,10 +12,15 @@ run:
   --env JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true" \
   jenkins_dind
 
+# Recreate the container
+recreate: build run
+
+
 # Stop and Remove the container
 kill:
 	docker stop jenkins-python-app
 	docker rm jenkins-python-app
+	docker image rm jenkins_dind
 
 # Logs of the container
 logs:
@@ -23,7 +28,6 @@ logs:
 
 # Build the image from the Dockerfile
 build:
-	docker image rm jenkins_dind
 	docker build -t jenkins_dind .
 
 # Stop the python app container

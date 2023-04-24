@@ -6,13 +6,12 @@ pipeline {
                 docker {
                     image 'python:3.10-alpine'
                 }
-                
+            }
             steps {
                 sh 'docker --version'
                 sh 'python3 --version'
                 sh 'make --version'
-                }
-        }
+            }
         }
     }
 }

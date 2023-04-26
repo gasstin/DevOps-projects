@@ -11,5 +11,11 @@ pipeline {
                 sh './first_project/setup_enviroment.sh'
             }
         }
+
+        stage('Test') { 
+            steps {
+                sh 'pytest'
+            }
+        }
     }
 }

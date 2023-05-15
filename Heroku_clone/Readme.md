@@ -18,5 +18,6 @@ Here are all HTML templates that are rendered by Flask.
 
 ### Py Files
 
-  - `app.py`
-  - `sities.py`
+  - `app.py` contains the application core.
+  - `sities.py` contains all the routes created to Static Web Sites management.
+  - `virtual_machines.py` contains all the routes created to Virtual Machines management.

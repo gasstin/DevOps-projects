@@ -13,10 +13,10 @@ virtual machines hosted in [AWS](https://aws.amazon.com/es/), like Heroku. Backe
 ### Templates
 Here are all HTML templates that are rendered by Flask.
 
-  - `sites` templates to use in Sites configuration
+  - `sites` templates to use in Sites configuration.
   - `virtual_machines` templates to use in Virtual Machine to use in VM configuration.
 
-### Py Files
+### Python Files
 
   - `app.py` contains the application core.
   - `sities.py` contains all the routes created to Static Web Sites management.

@@ -22,4 +22,6 @@ Here are all HTML templates that are rendered by Flask.
   - `sities.py` contains all the routes created to Static Web Sites management.
   - `virtual_machines.py` contains all the routes created to Virtual Machines management.
 
+Run `FLASK_RUN_PORT=1337 FLASK_ENV=development FLASK_APP=app PULUMI_ORG=[your-org-name] venv/bin/flask run` to start server.
+
 Thanks to [Beau Carnes](http://carnes.cc/) for share this tutorial.

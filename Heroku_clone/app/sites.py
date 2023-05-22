@@ -5,7 +5,7 @@ import requests
 from flask import (current_app,Blueprint,request,flash,redirect,url_for,render_template)
 from pulumi_aws import s3
 
-bp = Blueprint("sities", __name__, url_prefix="/sities")
+bp = Blueprint("sites", __name__, url_prefix="/sites")
 
 def create_pulumi_program(content: str):
     # Create a bucket
@@ -68,13 +68,13 @@ def create_site():
             flash(f"Error: A site with '{stack_name}' already exists. Choose other name",
                   category="danger")
 
-        return redirect(url_for("sities.list_sities"))
-    return render_template("sities/create.html")
+        return redirect(url_for("sites.list_sites"))
+    return render_template("sites/create.html")
 
 @bp.route("/")
-def list_sities():
-    """ List all the sities """
-    sities = []
+def list_sites():
+    """ List all the sites """
+    sites = []
     org_name = current_app.config["PULUMI_ORG"]
     project_name = current_app.config["PROJECT_NAME"]
     try:
@@ -90,13 +90,13 @@ def list_sities():
             )
             outs = stack.outputs()
             if 'website_url' in outs:
-                sities.append({"name": stack.name,
+                sites.append({"name": stack.name,
                 "url": f"http://{outs['website_url'].value}",
                 "console_url": f"https://app.pulumi.com/{org_name}/{project_name}/{stack.name}"})
     except Exception as exp:
         flash(str(exp), category="danger")
 
-    return render_template("sities/index.html", sities=sities)
+    return render_template("sites/index.html", sites=sites)
 
 @bp.route("/<string:id>/delete", methods=["POST"])
 def delete_site(id: str):

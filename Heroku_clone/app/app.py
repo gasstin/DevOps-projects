@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 import pulumi.automation as auto
 
 def ensure_plugins():
@@ -15,13 +15,13 @@ def create_app():
         PULUMI_ORG=os.environ.get("PULUMI_ORG"),
     )
 
-    app.route('/', methods=["GET"])
+    @app.route('/', methods=["GET"])
     def index():
             return render_template("index.html")
     
-    from . import sities
+    from . import sites
 
-    app.register_blueprint(sities.bp)
+    app.register_blueprint(sites.bp)
 
     from . import virtual_machines
 

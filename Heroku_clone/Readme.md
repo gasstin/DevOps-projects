@@ -3,7 +3,7 @@
 
 ## Introduction
 This project was created following a Freecodecamp tutorial. Consist in an application that permits users to create, uptade and check static web sites and
-virtual machines hosted in [AWS](https://aws.amazon.com/es/), like Heroku. Backend's app uses Python and Flask framework, and HTML files to Frontend. 
+virtual machines hosted in [AWS](https://aws.amazon.com/es/), like Heroku. Backend's app uses Python and Flask framework, and HTML, CSS files to Frontend. 
 
 ## Files
 ### Setup
@@ -21,3 +21,5 @@ Here are all HTML templates that are rendered by Flask.
   - `app.py` contains the application core.
   - `sities.py` contains all the routes created to Static Web Sites management.
   - `virtual_machines.py` contains all the routes created to Virtual Machines management.
+
+Thanks to [Beau Carnes](http://carnes.cc/) for share this tutorial.

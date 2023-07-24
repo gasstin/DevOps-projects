@@ -46,9 +46,9 @@ To create your development environment, follow these steps:
 
 3. **Plan the Infrastructure**: Run the following command to see what Terraform plans to do before actually creating any resources: `terraform plan`
 
-4. ´**Apply the Changes**: If the plan looks good, apply the changes to create the development environment: `terraform apply`
+4. **Apply the Changes**: If the plan looks good, apply the changes to create the development environment: `terraform apply`
 
-5. **Destroy the Environment (When No Longer Needed)**: When you're done with the development environment, make sure to clean up by destroying the resources: `terraform apply`
+5. **Destroy the Environment (When No Longer Needed)**: When you're done with the development environment, make sure to clean up by destroying the resources: `terraform destroy`
 
 Please note that Terraform will prompt for confirmation before executing destructive actions, such as applying or destroying the infrastructure.
 

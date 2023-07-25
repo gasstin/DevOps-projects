@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-nginx-web
+spec:
+  selector:
+    app: k8s-nginx-web
+  ports:
+  - port: 3040 
+    targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-nginx-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-nginx-web
+  template:
+    metadata:
+      labels:
+        app: k8s-nginx-web
+    spec:
+      containers:
+      - name: k8s-nginx-web
+        image: gasstin/k8s-nginx-web
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 3000
